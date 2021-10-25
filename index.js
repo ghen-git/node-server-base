@@ -14,7 +14,6 @@ async function serverRequestHandler(req, res)
     if(client.isInURLTree(req.url))
         res.write(await client.loadPage(req.url));
 
-
     //sends the response (HAS TO BE THE LAST ROW)
     res.end();
 }
