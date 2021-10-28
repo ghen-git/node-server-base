@@ -9,11 +9,11 @@ initURLTree();
 async function initURLTree()
 {
     //reads the url config
-    var urlConfig = await readFile(__dirname + "/../config/url-config.json");
+    var urlConfig = await readFile(__dirname + '/../config/url-config.json');
     URLTree = JSON.parse(urlConfig);
 
     //recursevly adds urls from the files in the client folder
-    var files = await readdir(__dirname + "/../client/");
+    var files = await readdir(__dirname + '/../client/');
     await populateTree('', files);
 
     //logs the url tree
@@ -27,7 +27,7 @@ async function populateTree(parentFolder, files)
     {
         if(isFolder(file))
         {
-            var childFiles = await readdir(__dirname + "/../client/" + `${parentFolder}/${file}`);
+            var childFiles = await readdir(__dirname + '/../client/' + `${parentFolder}/${file}`);
             //repeats the function with the folder as the parentFolder parameter
             populateTree(`${parentFolder}/${file}`, childFiles);
         }
@@ -40,7 +40,7 @@ function isFolder(path)
 {
     //checks if path doesn't have dots or if the text after the last dot is
     //longer than 4 chars
-    return path.split(".").length == 1 || !(path.split(".").pop().length <= 4);
+    return path.split('.').length == 1 || !(path.split('.').pop().length <= 4);
 }
 
 exports.URLTree = URLTree;

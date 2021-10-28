@@ -2,5 +2,9 @@
     {
         "url": "/",
         "path": "/index.html"
+    },
+    {
+        "url": "/balls",
+        "path": "/index.html"
     }
 ]
