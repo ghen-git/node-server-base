@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+
+    <!-- Specify a custom TailwindCSS configuration -->
+    <script type="tailwind-config">
+{
+    theme: 
+    {
+        extend: 
+        {
+            colors: 
+            {
+                screen: '#191919',
+                card: '#252525',
+            },
+        }
+    }
+}
+</script>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="login-form">
-        <div>
-            <span>Username: </span><input type="text" name="username-input" id="username-input">
+    <div class="min-h-screen bg-screen flex flex-col justify-center place-items-center">
+        <div class="relative text-white py-6 px-10 bg-card shadow-xl rounded-xl w-48 m-1 rotate-6 hover:-translate-y-4 hover:-translate-x-4 hover:brightness-125 transition">
+            Sus
         </div>
-        <div>
-            <span>Password: </span><input type="password" name="password-input" id="password-input">
+        <div class="relative text-white py-6 px-10 bg-card shadow-xl rounded-xl w-48 m-1 rotate-6 hover:-translate-y-4 hover:-translate-x-4 hover:brightness-125 transition">
+            Sus
         </div>
-        <button>Sign In</button>
+        <div class="relative text-white py-6 px-10 bg-card shadow-xl rounded-xl w-48 m-1 rotate-6 hover:-translate-y-4 hover:-translate-x-4 hover:brightness-125 transition">
+            Sus
+        </div>
+        <div class="relative text-white py-6 px-10 bg-card shadow-xl rounded-xl w-48 m-1 rotate-6 hover:-translate-y-4 hover:-translate-x-4 hover:brightness-125 transition">
+            Sus
+        </div>
     </div>
 </body>
 </html>
