@@ -10,7 +10,7 @@ async function serverRequestHandler(req, res)
 {
     res.writeHead(200, {ContentType: 'text/html'});
 
-    //checks if the request was a client page request
+    //checks if the request was a client page requests
     if(client.isInURLTree(req.url))
         res.write(await client.loadPage(req.url));
 
