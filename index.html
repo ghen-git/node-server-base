@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="insert-new-entry">
+        <input type="text" id="getQuestion">
+        <input type="text" id="getAnswer">
+        <button onclick="InsertNew()">Insert</button>
+    </div>
+
+    <div id="ask-question">
+        <h1 id="question"></h1>
+        <input type="text" id="answer">
+        <button onclick="Answer();">Answer</button>
+    </div>
+
+    <div id="delete-question">
+        <input type="text" id="questionToDelete">
+        <button onclick="Delete()">Delete</button>
+    </div>
+</body>
+</html>
