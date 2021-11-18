@@ -1,10 +1,13 @@
-[
-    {
-        "url": "/",
-        "path": "/index.html"
-    },
-    {
-        "url": "/home",
-        "path": "/index.html"
-    }
-]
+{
+    "pages": 
+    [
+        {
+            "url": "/",
+            "path": "/index.html"
+        },
+        {
+            "url": "/home",
+            "path": "/index.html"
+        }
+    ]
+}
