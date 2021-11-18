@@ -80,7 +80,8 @@ exports.loadPage = async function(url, res)
 
         res.writeHead(200, {'Content-Type': getContentType(path)});
         console.log(`requested file: ${path} `);
-//
+        sus
+
         return new Buffer(await readFile(`${__dirname}/../client${path}`));
     }
 }
