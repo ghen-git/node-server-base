@@ -1,4 +1,16 @@
-*
+body
 {
-    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background-color: rgb(255, 226, 239);
+}
+
+.center p
+{
+    font-size: 50pt;
+    font-style: italic;
+    font-weight: 800;
 }

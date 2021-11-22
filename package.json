@@ -1,12 +1,21 @@
 {
   "name": "node-server-base",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghen-git/node-server-base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghen-git/node-server-base/issues"
+  },
+  "homepage": "https://github.com/ghen-git/node-server-base#readme",
+  "description": ""
 }

@@ -59,6 +59,6 @@ exports.loadPage = async function(url)
     if(isInURLTree(url))
     {
         var path = URLTree.filter(item => item.url.includes(url))[0].path;
-        return new Buffer(await readFile(`${__dirname}/../client${path}`));
+        return await readFile(`${__dirname}/../client${path}`);
     }
 }
