@@ -1,63 +1,26 @@
-var questions;
-var askedQuestionsIds;
-var currQuestion;
+const http = require('http');
+const { readFileSync } = require('fs').promises;
+const client = require('./server/client');
 
-window.onload = function()
+// server setup
+
+const server = http.createServer(serverRequestHandler);
+
+async function serverRequestHandler(req, res)
 {
-    questions = JSON.parse(window.localStorage.getItem("questions"));
-    if(questions == undefined)
-        questions = [];
-    askedQuestionsIds = [];
+//     if(req.url.split('.').pop() == 'js');
+//         res.writeHead(200, {"ContentType": 'text/html'});
 
-    LoadAnswer();
-}
-
-function InsertNew()
-{
-    questions = JSON.parse(window.localStorage.getItem("questions"));
-    if(questions == undefined)
-        questions = [];
-
-    questions.push({question: $("#getQuestion").val(), answer: $("#getAnswer").val().split(',')});
-    console.log(questions);
-    window.localStorage.setItem("questions", JSON.stringify(questions));
-}
-
-function Answer()
-{
-
-    if(currQuestion.answer.includes($("#answer").val()))
+    //checks if the request was a client page request
+    if(client.isInURLTree(req.url))
     {
-        console.log(`Correct! Answer ${$("#answer").val()}`);
-        console.log(currQuestion.answer);
-        LoadAnswer();
+        res.writeHead(200, {'Content-Type': client.getContentType(client.getPath(req.url))});
+        console.log(client.getContentType(client.getPath(req.url)));
+        res.write(await client.loadPage(req.url));
     }
+
+    //sends the response (HAS TO BE THE LAST ROW)
+    res.end();
 }
 
-function LoadAnswer()
-{
-    if(askedQuestionsIds.length != questions.length)
-    {
-        let questionId;
-        do
-            questionId = Math.floor(Math.random() * questions.length);
-        while(askedQuestionsIds.includes(questionId));
-    
-        currQuestion = questions[questionId];
-    
-        $("#question").text(currQuestion.question);
-    
-        askedQuestionsIds.push(questionId);
-    }
-}
-
-function Delete()
-{
-    questions = JSON.parse(window.localStorage.getItem("questions"));
-    if(questions == undefined)
-        questions = [];
-
-    questions = questions.filter((v, i, a) => { return v.question != $("#questionToDelete").val()});
-    console.log(questions);
-    window.localStorage.setItem("questions", JSON.stringify(questions));
-}
+server.listen(80);
