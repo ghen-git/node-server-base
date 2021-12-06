@@ -81,6 +81,13 @@ exports.getContentType = function(url)
             break;
         case 'js':
             contentType = 'text/javascript';
+            break;
+        case 'png':
+        case 'jpg':
+        case 'jpeg':
+        case 'svg':
+            contentType = `image/${extension}`;
+            break;
     }
 
     return contentType;
