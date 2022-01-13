@@ -11,7 +11,7 @@ const server = http.createServer(serverRequestHandler);
 async function serverRequestHandler(req, res)
 {
     //checks if the request was a client page request
-    if(client.isIURLTree(req.url))
+    if(client.isInURLTree(req.url))
     {
         res.writeHead(200, {'Content-Type': client.getContentType(client.getPath(req.url))});
         console.log(client.getContentType(client.getPath(req.url)));
