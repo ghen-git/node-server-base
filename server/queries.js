@@ -13,13 +13,6 @@ const query = util.promisify(connection.query).bind(connection);
 exports.runQuery = async function (req, res)
 {
     const queryName = req.url.split('/').pop();
-    let post;
-    try
-    {
-        post = await getPost(req);
-    }
-    catch
-    {}
 
     switch(queryName)
     {
@@ -47,23 +40,4 @@ exports.runQuery = async function (req, res)
         //     res.end();
         //     break;
     }
-}
-
-async function getPost(req)
-{
-    return new Promise(resolve =>
-        {   
-            var body = '';
-            req.on('data', (chunk) =>
-            {
-                body += chunk;
-            });
-            req.on('end', () => 
-            {
-                let bodyJSON = {};
-                for(let field of body.split('&'))
-                    bodyJSON[field.split('=')[0]] = field.split('=')[1];
-                resolve(bodyJSON);
-            });
-        });
 }
