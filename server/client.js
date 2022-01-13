@@ -10,7 +10,7 @@ async function initURLTree()
 {
     //reads the url config
     const urlConfig = await readFile(__dirname + '/../config/url-config.json');
-    URLTree = JSON.parse(urlConfig).pages;
+    URLTree = JSON.parse(urlConfig);
 
     //recursevly adds urls from the files in the client folder
     const files = await readdir(__dirname + '/../client/');

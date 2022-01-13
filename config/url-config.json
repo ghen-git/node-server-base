@@ -1,24 +1,10 @@
-{
-    "pages": 
-    [
-        {
-            "url": "/",
-            "path": "/index.html"
-        },
-        {
-            "url": "/home",
-            "path": "/index.html"
-        }
-    ],
-    "functions": 
-    [
-        {
-            "url": "/",
-            "path": "/index.html"
-        },
-        {
-            "url": "/home",
-            "path": "/index.html"
-        }
-    ]
-}
+[
+    {
+        "url": "/",
+        "path": "/index.html"
+    },
+    {
+        "url": "/home",
+        "path": "/index.html"
+    }
+]
