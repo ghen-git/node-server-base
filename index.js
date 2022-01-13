@@ -2,7 +2,8 @@ const http = require('http');
 const { readFileSync } = require('fs').promises;
 const client = require('./server/client');
 const dispatcher = require('./server/dispatcher');
-const queries = require('./server/queries');
+//const queries = require('./server/sql/queries');
+const queries = require('./server/mongodb/queries');
 
 // server setup
 
