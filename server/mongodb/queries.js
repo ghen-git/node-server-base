@@ -1,9 +1,15 @@
 const { MongoClient } = require('mongodb');
-const { readFile } = require('fs').promises;
 
-const CONNECTIONSTRING = "mongodb://127.0.0.1:27017";
+const CONNECTIONSTRING = 'mongodb://127.0.0.1:27017';
+const CONNECTIONOPTIONS = { useNewUrlParser: true };
 
-MongoClient.connect(CONNECTIONSTRING, { useNewUrlParser: true });
+var client;
+setup();
+
+async function setup()
+{
+    client = await MongoClient.connect(CONNECTIONSTRING, CONNECTIONOPTIONS);
+}
 
 exports.runQuery = async function (req, res)
 {
@@ -11,28 +17,8 @@ exports.runQuery = async function (req, res)
 
     switch(queryName)
     {
-        // case 'cock':
-        //     await query('INSERT INTO specialists(name, surname, email, phone_number, age, description) VALUES("giovanni", "giorgio", "giovanni.giorgio@gmail.com", "+69 420", 69, "A well-known amongus player");');
-        //     res.end();
-        //     break;
-        //case 'cock2':
-        //    res.end(JSON.stringify(await query('SELECT * FROM specialists')));
-        //    break;
-        //case 'cock5':
-        //    res.end(JSON.stringify(await query('SELECT * FROM treatments')));
-        //    break;
-        //case 'cock6':
-        //    res.end(JSON.stringify(await query('SELECT name, treatment_name, day FROM specialists INNER JOIN (treatments INNER JOIN specialiststreatments ON treatments.id = specialiststreatments.treatment_id)ON  specialists.id = specialiststreatments.specialist_id')));
-        //    break;
-        // case 'cock3':
-        //     let post = await getPost(req);
-        //     console.log(`INSERT INTO specialists(name, surname, email, phone_number, age, description) VALUES("${post.name}", "${post.surname}", "${post.email}", "${post.phoneNumber}", ${post.age}, "${post.description}");`);
-        //     await query(`INSERT INTO specialists(name, surname, email, phone_number, age, description) VALUES("${post.name}", "${post.surname}", "${post.email}", "${post.phoneNumber}", ${post.age}, "${post.description}");`);
-        //     res.end();
-        //     break;
-        // case 'cock4':
-        //     await query('DELETE FROM specialists');
-        //     res.end();
-        //     break;
+        // case 'example':
+        //     const allPlayers = await (await client.db('5d_basket').collection('players').find({})).toArray();
+        //     console.table(allPlayers);
     }
 }
