@@ -19,3 +19,5 @@ async function executeParamQuery(queryName, param)
             ajaxRequest.done((data) =>{ resolve(data); });
         });
 }
+
+export default { executeQuery, executeParamQuery };
