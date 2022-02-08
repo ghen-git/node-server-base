@@ -18,7 +18,11 @@ exports.runQuery = async function (req, res)
     switch(queryName)
     {
         // case 'example':
-        //     const allPlayers = await (await client.db('5d_basket').collection('players').find({})).toArray();
-        //     console.table(allPlayers);
+        //     res.end(JSON.stringify(await find('basket', 'players', {})));
     }
+}
+
+async function find(db, collection, query)
+{
+    return await (await client.db(db).collection(collection).find(query)).toArray();
 }

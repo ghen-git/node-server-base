@@ -27,7 +27,7 @@ function create(json, columnNames = [], ignoreColumns = [])
     else
         for(const column of keys)
             thead.append($(`
-            <th>${column.replace(/\w\S*/g, (txt) => {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}}</th>
+            <th>${column.replace(/\w\S*/g, (txt) => {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</th>
             `));
 
     table.append(thead);
