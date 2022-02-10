@@ -4,7 +4,7 @@ async function executeQuery(queryName)
         {
             let ajaxRequest = $.ajax({url: `query/${queryName}`, type: "POST", timeout: "4000"});
         
-            ajaxRequest.fail(() => this.console.error("Holy shmokes."));
+            ajaxRequest.fail(() => console.error("Holy shmokes."));
             ajaxRequest.done((data) =>{ resolve(data); });
         });
 }
@@ -15,7 +15,7 @@ async function executeParamQuery(queryName, param)
         {
             let ajaxRequest = $.ajax({url: `query/${queryName}`, type: "POST", timeout: "4000", data: param});
         
-            ajaxRequest.fail(() => this.console.error("Holy shmokes."));
+            ajaxRequest.fail(() => console.error("Holy shmokes."));
             ajaxRequest.done((data) =>{ resolve(data); });
         });
 }
