@@ -81,7 +81,7 @@ function create(json, options)
     for(let i = 0; i < json.length; i++)
     {
         const row = json[i];
-        const tr = $(`<tr class="${rowClasses}" onclick="${rowCallback != undefined ? rowCallback(i, row) : ''}">`);
+        const tr = $(`<tr class="${rowClasses}" onclick="${rowCallback != undefined ? rowCallback(i, row).replace(/"/gi, '\'') : ''}">`);
         
         for(const col of keys)
             $(`
