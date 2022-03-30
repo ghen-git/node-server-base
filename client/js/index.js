@@ -1,7 +1,7 @@
 import serverVerbs from './modules/server-verbs.js';
 import JSONTable from './modules/JSON-table.js';
 
-//sql interface example
+//server verb example
 serverVerbs.executeQuery('example');
 
 //JSON table example
@@ -20,6 +20,17 @@ const table = JSONTable.create(json,
         ignoreColumns: ['_id'],
         mode: 'dark',
         headerClasses: 'bg-orange-300 border-b-2 border-b-orange-400',
-        rowCallback: (i, row) => `console.log('line n.${i + 1}'); console.table([${JSON.stringify(row)}]); `
+        rowCallback: (i, row) => `console.log('line n.${i + 1}'); console.table([${JSON.stringify(row)}]);`
     });
-$('body').append(table);
+
+$('body').append(table);ù
+
+/*
+NOTE:
+if you're using function references (e.g. rowCallback: 'someFunction()') this
+wont work unless you declare the function as follows:
+
+window.someFunction = () => { }
+window.someFunction = function someFunction() {}
+window.someFunction = someFunction;
+*/
