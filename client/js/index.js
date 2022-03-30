@@ -21,9 +21,9 @@ const table = JSONTable.create(json,
         mode: 'dark',
         headerClasses: 'bg-orange-300 border-b-2 border-b-orange-400',
         rowCallback: (i, row) => `console.log('line n.${i + 1}'); console.table([${JSON.stringify(row)}]);`
-    });
+});
 
-$('body').append(table);ù
+$('body').append(table);
 
 /*
 NOTE:
