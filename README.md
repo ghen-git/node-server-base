@@ -1,4 +1,4 @@
-- Copyright e diritto d'autore
+# Copyright e diritto d'autore
 
 Il copyright è un titolo che consente a chi lo detiene di distribuire, modificare e sfruttare a scopo di lucro un prodotto, nel nostro caso software.
 Quando si acquista un software di solito si ottiene la licenza d'uso, un contratto che specifica i termini di utilizzo del prodotto. Questi possono variare da
@@ -16,27 +16,27 @@ SHAREWARE - di solito non è disponibile il codice sorgente, e per ridistribuirl
 PROPRIETARIO - utilizzo, copia, modifica e distribuzione sono vietati o richiedono permessi.
 COMMERCIALE - creato da aziende a scopo di lucro, può rientrare nelle altre categorie
 
-- open source che cos'è
+# open source che cos'è
 
 Software del quale ho accesso al codice sorgente
 
-- software semilibero
+# software semilibero
 
 non posso ridistribuirlo a scopo di lucro ma posso modificarlo
 
-- associazioni ricorsive
-- che cos'è la normalizzazione
+
+# che cos'è la normalizzazione
 
 processo per far aderire un modello relazionale allo standard delle forme normali
 
-- i problemi di una base dati
+# i problemi di una base dati
 
 ridondanza, incongruenza, inconsistenza
 - ridondanza: i dati sono ripetuti
 - incongruenza: quando modifico uno dei dati ripetuti, l'altro non si modifica, e quindi lo stesso dato logico a 2 valori diversi.
 - inconsistenza: quando faccio una query, il risultato non sarà attendibile.
 
-- le regole di normalizzazione
+# le regole di normalizzazione
 
 dipendenza funzionale:
 quando attributi di un insieme B appartengono anche ad un insieme A
@@ -49,32 +49,31 @@ le forme normali:
 
 BCNF (Boyce cod normal form) - La chiave non deve dipendere da attributi non chiave
 
-- che cos'è l'algebra relazionale
+# che cos'è l'algebra relazionale
 
 è un linguaggio che permette di descrivere le interrogazioni fatte a un database
 
-- con operatori insiemistici 
+# con operatori insiemistici 
 
 unione, intersezione, differenza
 
 operatori algebrici
 proiezione e selezione
 
-- come si implementa la differenza in sql
+# come si implementa la differenza in sql
 
 EXCEPT
 
-- come si implementa l'intersezione in sql
+# come si implementa l'intersezione in sql
 
 INTERSECT 
 
-- web service RESTful cosa sono
-- cosa sono REST e SOAP
+# cosa sono REST e SOAP
 
 REST: standard, basato su HTTP, flessibile
 SOAP ( standard communication protocol system ): si basa su un modello a classi, quindi molto più speciifco, ma possono essere codificati solo in XML
 
-- verbi usati in HTTP dai REST
+# verbi usati in HTTP dai REST
 
 POST: nell'header
 GET: nell'url
@@ -82,19 +81,19 @@ PUT: per gli update o per rimpiazzare
 PATCH: solo per modificare
 DELETE: per cancellare
 
-- variabile di sessione che cos'è
+# variabile di sessione che cos'è
 
 contiene dati relativi alla sessione di utilizzo del software che vengono scartati quando quest'ultimo viene chiuso.
 In ASP, è una classe a cui noi possiamo dare delle coppie chiave valore
 
-- variabile di applicazione che cos'è
+# variabile di applicazione che cos'è
 
 Sempre coppia chiave valore, ma vive per l'intera durata del funzionamento dell'applicazione (per diego: da quando premi il tasto verde a quando premi il tasto rosso su visual studio)
 
-- come si imposta una variabile di sessione in un linguaggio qualsiasi, come viene definita e dove
+# come si imposta una variabile di sessione in un linguaggio qualsiasi, come viene definita e dove
 
 Boh, in JS con window.sessionStorage, a livello client. In asp dal code behind. 👍
 
-- cosa viene allocato nella memoria di massa sul dispositivo (cookie)
+# cosa viene allocato nella memoria di massa sul dispositivo (cookie)
 
 Contenitore di dati di un'applicazione client-server relativi a un client speifico che risiedono su quest'ultimo, usato per esempio per salvare un token JWT.
